@@ -75,8 +75,8 @@
         const playerHeight = 60;
 
         // Ограничения движения (расширены в 1.5 раза влево и вправо)
-        const minX = -10; // Расширено влево
-        const maxX = 110; // Расширено вправо
+        const minX = 0; // Расширено влево
+        const maxX = 20; // Расширено вправо
         const minY = playerHeight / 2;
         const maxY = 100 - playerHeight / 2;
 
@@ -190,7 +190,7 @@
                 if (shouldShoot) {
                     shoot();
                 }
-            }, 300); // Интервал стрельбы
+            }, 100); // Интервал стрельбы
         }
 
         function stopShooting() {
@@ -207,7 +207,7 @@
 
             let bulletY = playerY;
             const bulletInterval = setInterval(() => {
-                bulletY -= 2; // Скорость пули (движение вверх)
+                bulletY -= 1; // Скорость пули (движение вверх)
                 bullet.style.bottom = `${bulletY}px`;
 
                 // Проверка столкновения пули с врагами
@@ -240,7 +240,7 @@
         startShooting();
 
         // Создание врагов каждые 2 секунды
-        setInterval(createEnemy, 2000);
+        setInterval(createEnemy,1000);
 
         // Основной игровой цикл
         function gameLoop() {
